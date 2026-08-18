@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>For Mjay ♡</title>
+
+<style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #f6dfe8;
+    color: #4a3740;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+.phone {
+    width: 390px;
+    height: 844px;
+
+    position: relative;
+
+    margin: auto;
+
+    background: #111;
+
+    padding: 10px;
+
+    border-radius: 48px;
+
+    box-shadow:
+        0 20px 60px rgba(80, 30, 50, .30);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 39px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #ffffff 0%,
+            #fff7fa 35%,
+            #f8e4ed 100%
+        );
+}
+
+
+/* =====================================================
+   PHONE NOTCH
+===================================================== */
+
+.notch {
+    position: absolute;
+
+    z-index: 100;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 125px;
+    height: 29px;
+
+    background: #080808;
+
+    border-radius:
+        0 0 18px 18px;
+}
+
+
+/* =====================================================
+   LOCK SCREEN
+===================================================== */
+
+.lock-screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding:
+        48px
+        22px
+        20px;
+
+    text-align: center;
+
+    transition:
+        opacity .6s ease,
+        transform .7s ease;
+}
+
+.lock-screen.hide {
+
+    opacity: 0;
+
+    transform: scale(1.05);
+
+    pointer-events: none;
+}
+
+
+/* TOP */
+
+.for-text {
+
+    margin-top: 7px;
+
+    color: #b26d88;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+}
+
+
+/* TITLE */
+
+.lock-title {
+
+    margin-top: 17px;
+
+    font-family: Georgia, serif;
+
+    font-size: 31px;
+
+    font-weight: normal;
+
+    color: #3f3036;
+}
+
+
+/* HINT */
+
+.hint {
+
+    margin-top: 12px;
+
+    color: #967184;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* LOCK */
+
+.lock {
+
+    margin-top: 42px;
+
+    margin-bottom: 25px;
+
+    font-size: 95px;
+
+    animation:
+        lockFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes lockFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* =====================================================
+   PASSWORD BOXES
+===================================================== */
+
+.password-boxes {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 23px;
+}
+
+.password-box {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255,255,255,.9);
+
+    border:
+        1px solid
+        #ead9df;
+
+    border-radius: 10px;
+
+    color: #a64a70;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 3px 9px
+        rgba(80,30,50,.08);
+}
+
+
+/* =====================================================
+   KEYPAD
+===================================================== */
+
+.keypad {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 61px);
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.key {
+
+    width: 61px;
+    height: 61px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.88);
+
+    color: #42343a;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 3px 10px
+        rgba(90,40,60,.09);
+
+    cursor: pointer;
+
+    transition:
+        transform .1s,
+        background .1s;
+}
+
+.key:active {
+
+    transform: scale(.88);
+
+    background: #f2ccd9;
+}
+
+
+/* CLEAR BUTTON */
+
+.clear {
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   WRONG PASSWORD
+===================================================== */
+
+.shake {
+
+    animation:
+        shake .35s ease;
+}
+
+@keyframes shake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   LETTER SCREEN
+===================================================== */
+
+.letter-screen {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: none;
+
+    overflow-y: auto;
+
+    padding:
+        42px
+        12px
+        18px;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #fff 0%,
+            #fff6f9 45%,
+            #f8e3ed 100%
+        );
+}
+
+.letter-screen::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter {
+
+    position: relative;
+
+    min-height: 100%;
+
+    padding:
+        28px
+        22px
+        35px;
+
+    background: #fffdf9;
+
+    border:
+        1px solid
+        #decda8;
+
+    box-shadow:
+        0 5px 20px
+        rgba(80,50,30,.08);
+
+    font-family: Georgia, serif;
+}
+
+
+/* FOR */
+
+.letter-for {
+
+    text-align: center;
+
+    color: #977047;
+
+    font-style: italic;
+
+    font-size: 15px;
+}
+
+
+/* OPENING */
+
+.letter-title {
+
+    text-align: center;
+
+    margin:
+        18px 0
+        25px;
+
+    color: #3e3035;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    line-height: 1.25;
+
+    font-weight: normal;
+}
+
+
+/* =====================================================
+   TYPING TEXT
+===================================================== */
+
+.letter-text {
+
+    color: #514248;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+}
+
+
+/*
+   Each character gets this class
+*/
+
+.letter-char {
+
+    display: inline-block;
+
+    opacity: 0;
+
+    transform:
+        translateY(7px)
+        scale(.96);
+}
+
+
+/*
+   Animation applied individually
+*/
+
+.letter-char.show {
+
+    animation:
+        letterJump
+        .28s
+        cubic-bezier(.2,.8,.3,1)
+        forwards;
+}
+
+@keyframes letterJump {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(9px)
+            scale(.92);
+    }
+
+    55% {
+
+        opacity: 1;
+
+        transform:
+            translateY(-3px)
+            scale(1.03);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+.photo-gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 6px;
+
+    margin-top: 28px;
+}
+
+.photo {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    border:
+        2px solid
+        white;
+
+    box-shadow:
+        0 3px 8px
+        rgba(50,30,40,.15);
+
+    opacity: 0;
+
+    transform:
+        translateY(15px)
+        rotate(0deg);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.photo.visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        rotate(0deg);
+}
+
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
+
+.signature {
+
+    text-align: right;
+
+    margin-top: 30px;
+
+    color: #895273;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+}
+
+.signature.visible {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   MUSIC PLAYER
+===================================================== */
+
+.music-player {
+
+    position: sticky;
+
+    bottom: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 27px;
+
+    padding:
+        9px
+        12px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 4px 17px
+        rgba(60,30,50,.16);
+}
+
+
+/* MUSIC ICON */
+
+.music-icon {
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #b83e6c;
+
+    color: white;
+
+    font-size: 20px;
+
+    animation:
+        musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* MUSIC INFO */
+
+.music-info {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.music-title {
+
+    color: #4c3941;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.music-subtitle {
+
+    margin-top: 3px;
+
+    color: #9a8a91;
+
+    font-size: 11px;
+}
+
+
+/* MUSIC BUTTON */
+
+.music-button {
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #b83e6c;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    z-index: 200;
+
+    color: #c76c8d;
+
+    font-size: 17px;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart
+        5s
+        linear
+        forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    100% {
+
+        transform:
+            translateY(-100vh)
+            rotate(35deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-height: 700px) {
+
+    .phone {
+
+        width: 100vw;
+        height: 100vh;
+
+        padding: 0;
+
+        border-radius: 0;
+    }
+
+    .screen {
+
+        border-radius: 0;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PHONE
+===================================================== -->
+
+<div class="phone">
+
+<div class="screen">
+
+<div class="notch"></div>
+
+
+<!-- =====================================================
+     LOCKED FRONT PAGE
+===================================================== -->
+
+<section
+    class="lock-screen"
+    id="lockScreen"
+>
+
+    <div class="for-text">
+        FOR MJAY ♡
+    </div>
+
+
+    <h1 class="lock-title">
+        This is locked
+    </h1>
+
+
+    <div class="hint">
+        Hint: Our Monthsary Date
+    </div>
+
+
+    <div class="lock">
+        🔒
+    </div>
+
+
+    <!-- PASSWORD DOTS -->
+
+    <div
+        class="password-boxes"
+        id="passwordBoxes"
+    >
+
+        <div class="password-box"></div>
+        <div class="password-box"></div>
+        <div class="password-box"></div>
+        <div class="password-box"></div>
+
+    </div>
+
+
+    <!-- KEYPAD -->
+
+    <div class="keypad">
+
+        <button
+            class="key"
+            onclick="numberPressed('1')"
+        >
+            1
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('2')"
+        >
+            2
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('3')"
+        >
+            3
+        </button>
+
+
+        <button
+            class="key"
+            onclick="numberPressed('4')"
+        >
+            4
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('5')"
+        >
+            5
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('6')"
+        >
+            6
+        </button>
+
+
+        <button
+            class="key"
+            onclick="numberPressed('7')"
+        >
+            7
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('8')"
+        >
+            8
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('9')"
+        >
+            9
+        </button>
+
+
+        <button
+            class="key clear"
+            onclick="clearPassword()"
+        >
+            clear
+        </button>
+
+        <button
+            class="key"
+            onclick="numberPressed('0')"
+        >
+            0
+        </button>
+
+        <button
+            class="key"
+            onclick="deleteNumber()"
+        >
+            ⌫
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LETTER PAGE
+===================================================== -->
+
+<section
+    class="letter-screen"
+    id="letterScreen"
+>
+
+<div class="letter">
+
+
+    <div class="letter-for">
+        for Mjay
+    </div>
+
+
+    <h2 class="letter-title">
+        Happy 1st motmot, bebi!
+    </h2>
+
+
+    <!--
+        THE LETTER WILL BE TYPED HERE
+    -->
+
+    <div
+        class="letter-text"
+        id="letterText"
+    ></div>
+
+
+    <!-- =================================================
+         PHOTOS
+    ================================================== -->
+
+    <div
+        class="photo-gallery"
+        id="photoGallery"
+    >
+
+        <!--
+            CHANGE THESE FILE NAMES
+            TO YOUR ACTUAL PHOTOS.
+        -->
+
+        <img
+            class="photo"
+            src="Messenger_creation_02FC602F-C727-461F-9BD4-5D7BD81B9B28.jpeg"
+            alt="Our photo"
+        >
+
+        <img
+            class="photo"
+            src="Messenger_creation_13076021-AF86-4C8E-AC7F-619930320F68.jpeg"
+            alt="Our photo"
+        >
+
+        <img
+            class="photo"
+            src="Messenger_creation_6A0ACF63-35F9-4581-8FCF-68F85B468E37.jpeg"
+            alt="Our photo"
+        >
+
+        <img
+            class="photo"
+            src="Messenger_creation_6B321A15-4595-4540-97F6-43BC1BAE4F09.jpeg"
+            alt="Our photo"
+        >
+
+        <img
+            class="photo"
+            src="Messenger_creation_96BBA521-32A0-4417-9748-AA54B6D6EEE3.jpeg"
+            alt="Our photo"
+        >
+
+    </div>
+
+
+    <!-- SIGNATURE -->
+
+    <div
+        class="signature"
+        id="signature"
+    >
+        Your wife
+    </div>
+
+
+    <!-- =================================================
+         MUSIC
+    ================================================== -->
+
+    <div class="music-player">
+
+        <div class="music-icon">
+            ♪
+        </div>
+
+
+        <div class="music-info">
+
+            <div class="music-title">
+                Our Theme Song
+            </div>
+
+            <div class="music-subtitle">
+                Play while reading ♡
+            </div>
+
+        </div>
+
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()"
+        >
+            ▶
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC FILE
+===================================================== -->
+
+<audio
+    id="backgroundMusic"
+    loop
+>
+
+    <source
+        src="Stephen Bishop - It Might Be You (Lyrics).mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<script>
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+
+/*
+   THE PASSWORD
+   IS 0719
+*/
+
+const correctPassword = "0719";
+
+let enteredPassword = "";
+
+
+/*
+   PRESS NUMBER
+*/
+
+function numberPressed(number) {
+
+    if (enteredPassword.length >= 4) {
+        return;
+    }
+
+
+    enteredPassword += number;
+
+
+    updatePasswordBoxes();
+
+
+    /*
+       AUTOMATICALLY CHECK
+       WHEN FOUR NUMBERS
+       HAVE BEEN ENTERED
+    */
+
+    if (enteredPassword.length === 4) {
+
+        setTimeout(() => {
+
+            if (
+                enteredPassword === correctPassword
+            ) {
+
+                unlockLetter();
+
+            } else {
+
+                wrongPassword();
+
+            }
+
+        }, 250);
+
+    }
+
+}
+
+
+/*
+   UPDATE DOTS
+*/
+
+function updatePasswordBoxes() {
+
+    const boxes =
+        document.querySelectorAll(
+            ".password-box"
+        );
+
+
+    boxes.forEach(
+        (box, index) => {
+
+            if (
+                index <
+                enteredPassword.length
+            ) {
+
+                box.textContent = "●";
+
+            } else {
+
+                box.textContent = "";
+
+            }
+
+        }
+    );
+
+}
+
+
+/*
+   DELETE
+*/
+
+function deleteNumber() {
+
+    enteredPassword =
+        enteredPassword.slice(0, -1);
+
+    updatePasswordBoxes();
+
+}
+
+
+/*
+   CLEAR
+*/
+
+function clearPassword() {
+
+    enteredPassword = "";
+
+    updatePasswordBoxes();
+
+}
+
+
+/*
+   WRONG PASSWORD
+*/
+
+function wrongPassword() {
+
+    const boxes =
+        document.getElementById(
+            "passwordBoxes"
+        );
+
+
+    boxes.classList.add("shake");
+
+
+    if (
+        navigator.vibrate
+    ) {
+
+        navigator.vibrate(180);
+
+    }
+
+
+    setTimeout(() => {
+
+        boxes.classList.remove(
+            "shake"
+        );
+
+    }, 400);
+
+
+    enteredPassword = "";
+
+    updatePasswordBoxes();
+
+}
+
+
+/* =====================================================
+   UNLOCK
+===================================================== */
+
+function unlockLetter() {
+
+    const lockScreen =
+        document.getElementById(
+            "lockScreen"
+        );
+
+    const letterScreen =
+        document.getElementById(
+            "letterScreen"
+        );
+
+
+    lockScreen.classList.add(
+        "hide"
+    );
+
+
+    setTimeout(() => {
+
+        lockScreen.style.display =
+            "none";
+
+
+        letterScreen.style.display =
+            "block";
+
+
+        startLetterAnimation();
+
+    }, 650);
+
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+
+/*
+   THIS IS THE MESSAGE
+   THAT WILL TYPE OUT.
+*/
+
+const letterMessage = `Happy 1st monthsary, baby. For 9 months of knowing each other, we had finally made it to 1 month of us being a couple. I know we have had our arguments, but even so, I will always love you the same. I know that what happened in the past can't be changed, but I am willing to change for you. I am willing to stop my bad habits for you. I can give thousands of reasons why I love you, but that won't still be enough, because my love for you is bigger than this entire universe. I can write you songs, poems, even learn your favorite songs, and I can write you letters that consist of words that will make you smile. Thank you for staying beside me through ups and downs. Thank you for becoming my comfort person. Thank you for giving me assurance. Thank you for everything. I love you, baby. I really do. I promise to put a ring on that finger one day. Not just any ring, but a ring that will bring our future, a ring that will be worn for eternity. I will keep my promise, baby. I will never ever leave you again:)) I love youuuuuu ><`;
+
+
+/*
+   TYPE THE LETTER
+   ONE CHARACTER AT A TIME
+*/
+
+function startLetterAnimation() {
+
+    const container =
+        document.getElementById(
+            "letterText"
+        );
+
+
+    container.innerHTML = "";
+
+
+    /*
+       Create every character
+       separately.
+    */
+
+    const characters =
+        Array.from(
+            letterMessage
+        );
+
+
+    characters.forEach(
+        (character, index) => {
+
+            const span =
+                document.createElement(
+                    "span"
+                );
+
+
+            span.className =
+                "letter-char";
+
+
+            /*
+               Preserve spaces
+            */
+
+            if (
+                character === " "
+            ) {
+
+                span.innerHTML =
+                    "&nbsp;";
+
+            }
+
+            else if (
+                character === "\n"
+            ) {
+
+                span.innerHTML =
+                    "<br>";
+
+            }
+
+            else {
+
+                span.textContent =
+                    character;
+
+            }
+
+
+            container.appendChild(
+                span
+            );
+
+
+            /*
+               Every letter appears
+               after a tiny delay.
+            */
+
+            setTimeout(() => {
+
+                span.classList.add(
+                    "show"
+                );
+
+                /*
+                   Keep the newest
+                   text visible.
+                */
+
+                const screen =
+                    document.getElementById(
+                        "letterScreen"
+                    );
+
+                screen.scrollTop =
+                    screen.scrollHeight;
+
+            }, index * 24);
+
+        }
+    );
+
+
+    /*
+       Show pictures after
+       the letter begins.
+    */
+
+    setTimeout(
+        showPhotos,
+        characters.length * 24 + 500
+    );
+
+
+    /*
+       Show signature after
+       typing finishes.
+    */
+
+    setTimeout(
+        () => {
+
+            document
+                .getElementById(
+                    "signature"
+                )
+                .classList.add(
+                    "visible"
+                );
+
+        },
+        characters.length * 24 + 800
+    );
+
+
+    /*
+       Start hearts
+    */
+
+    startHearts();
+
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+function showPhotos() {
+
+    const photos =
+        document.querySelectorAll(
+            ".photo"
+        );
+
+
+    photos.forEach(
+        (photo, index) => {
+
+            setTimeout(() => {
+
+                photo.classList.add(
+                    "visible"
+                );
+
+            }, index * 150);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+let musicPlaying = false;
+
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById(
+            "backgroundMusic"
+        );
+
+    const button =
+        document.getElementById(
+            "musicButton"
+        );
+
+
+    if (
+        musicPlaying === false
+    ) {
+
+        music.play()
+            .then(() => {
+
+                musicPlaying = true;
+
+                button.textContent =
+                    "❚❚";
+
+            })
+            .catch(() => {
+
+                alert(
+                    "Please add song.mp3 to the same folder as this HTML file."
+                );
+
+            });
+
+    }
+
+    else {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        button.textContent =
+            "▶";
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+let heartsStarted = false;
+
+
+function startHearts() {
+
+    if (heartsStarted) {
+        return;
+    }
+
+    heartsStarted = true;
+
+
+    setInterval(() => {
+
+        createHeart();
+
+    }, 1100);
+
+}
+
+
+function createHeart() {
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "heart";
+
+
+    heart.textContent =
+        Math.random() > .5
+            ? "♡"
+            : "♥";
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.animationDuration =
+        (
+            4 +
+            Math.random() * 3
+        ) + "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 7000);
+
+}
+
+</script>
+
+</body>
+</html>
